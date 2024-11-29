@@ -5,12 +5,18 @@ BASE_URL = `http://numbersapi.com/`;
 const favNumList = document.querySelector('#fav-num');
 const otherNumList = document.querySelector('#other-nums');
 
-function favNumberFacts(){
-    axios.get(`${BASE_URL}24?json`)
-    .then(res => console.log(res.data.text))
-    .catch(err => console.log(err))
-    };
+// *****************************************************************************************
+// get single fact for a number, console.log result
+// *****************************************************************************************
+// function favNumberFacts(){
+//     axios.get(`${BASE_URL}24?json`)
+//     .then(res => console.log(res.data.text))
+//     .catch(err => console.log(err))
+//     };
+// *****************************************************************************************
 
+
+// get 4 facts about single number and add to ul
 function fourFavNumFacts(){
     let promises=[];
     for (let i=1; i <= 4; i++){
@@ -27,6 +33,7 @@ function fourFavNumFacts(){
     .catch(err => console.log(err))
     };
 
+// get facts for multiple different numbers and add to ul
 function multiNumberFacts(){
     let nums = [15,23,8,21]
     axios.get(`${BASE_URL}${nums}?json`)
@@ -40,6 +47,7 @@ function multiNumberFacts(){
     .catch(err => console.log(err));
     };
 
+// fills page using functions above.
 function fillPage(){
     fourFavNumFacts();
     multiNumberFacts();
