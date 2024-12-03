@@ -20,7 +20,7 @@ function get_pokemon() {
             // species.forEach(s=>console.log(s.data))
             let descriptions = species.map(s => s.data.flavor_text_entries.find(entry => entry.language.name === 'en'));
             // console.log(descriptions)
-            descriptions.forEach((d,i) => console.log `${names[i]} : ${d.flavor_text}`)
+            descriptions.forEach((d,i) => console.log(`${names[i]} : ${d.flavor_text}`))
             })
         .catch(err => console.log(err))
         }
